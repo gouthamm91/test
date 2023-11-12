@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>POC Read Txt</title>
+</head>
+<body>
+	<textarea id="output" style="width: 500px; height: 500px;"></textarea>
+	<script type="text/javascript">
+		const url = './static/sample.txt';
+
+		// fetch(url)
+		//   .then(response => response.text())
+		//   .then(text => {
+		//     console.log(text);
+		//     document.getElementById('output').value = text;
+		//   });
+
+		const myRequest = new Request(url);
+  		fetch(myRequest)
+  		  .then((response) => response.text())
+  		  .then((text) => {
+		    document.getElementById('output').value = text;
+  		    // myArticle.innerHTML = text;
+  		  });
+	</script>
+</body>
+</html>
